@@ -1,0 +1,11 @@
+PASSORDSKJERM FOR GITHUB PAGES
+
+1. Åpne password.js i en teksteditor.
+2. Endre Julegave2026! til et selvvalgt passord mellom apostrofene.
+3. Last opp alle filene i denne mappen til hovedmappen i GitHub-repositoryet.
+4. For filer som allerede finnes: åpne dem på GitHub, trykk blyant (Edit), lim inn oppdatert innhold, og Commit changes. Alternativt bruk Add file > Upload files for å erstatte eksisterende filer.
+5. Vent på publisering og åpne nettsiden i et inkognitovindu for å teste.
+
+Testpassord: Julegave2026!
+
+VIKTIG: Dette er bare en visuell sperre. Passord og produktdata ligger offentlig i repositoryet. Ikke bruk et passord du bruker andre steder.
