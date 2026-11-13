@@ -1,1 +1,95 @@
-<!doctype html><html lang="no"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0e16"><meta name="description" content="Min ønskeliste – finn en gave jeg vil elske."><title>Min ønskeliste ✦</title><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="password.css"><script>document.documentElement.classList.add("password-locked");</script></head><body><section id="passwordGate" class="password-gate" aria-label="Lås opp ønskelisten"><form id="passwordForm" class="password-card"><div class="password-symbol">✳</div><div class="password-eyebrow">KUN FOR FAMILIE OG VENNER</div><h1>En liten liste med <em>store ønsker.</em></h1><p>Hei! Denne ønskelisten har en liten kode. Skriv inn passordet du har fått for å se gavene ♡</p><label for="wishlistPassword">Passord</label><div class="password-field"><input id="wishlistPassword" type="password" placeholder="Skriv inn passord" autocomplete="off" required><button type="button" id="togglePassword" aria-label="Vis passord">Vis</button></div><div id="passwordError" class="password-error" role="alert" aria-live="polite"></div><button type="submit" class="password-submit">Åpne ønskelisten ↗</button><small>✦ God jul 2026 ✦</small></form></section><div class="ambient"></div><header class="topbar wrap"><a class="logo" href="#top"><span class="logo-mark">✳</span> ønskelisten<span class="dot">.</span></a><div class="top-actions"><span class="tag"><span class="live"></span> JUL 2026</span><button class="icon-button" id="shareBtn" aria-label="Del ønskelisten" title="Kopier lenke">↗</button></div></header><main id="top" class="wrap"><section class="hero"><div class="hero-text"><div class="eyebrow">✦ EN LITEN SAMLING AV STORE ØNSKER</div><h1>Ting jeg <em>ønsker</em> meg<span class="dot">.</span></h1><p>En liten guide til ting som hadde gjort meg ekstra glad. Finn noe du liker, sjekk butikklenken og reserver gjerne gaven for å unngå dobbeltkjøp.</p><div class="hero-buttons"><a class="primary" href="#gaver">Utforsk ønskene <span>↗</span></a><button class="secondary" id="shareHero">Del listen ⤴</button></div></div><div class="hero-art"><div class="orb"></div><div class="gift-icon">✳</div><span class="art-label">WISH LIST / 2026</span></div></section><section id="gaver" class="catalog"><div class="section-heading"><div><div class="eyebrow">THE COLLECTION</div><h2>Mine ønsker <span id="totalCount"></span></h2></div><div class="sort-wrap"><label for="sort">Sorter etter</label><select id="sort"><option value="priority">Mest ønsket</option><option value="priceAsc">Pris: lav til høy</option><option value="priceDesc">Pris: høy til lav</option><option value="name">Navn A–Å</option></select></div></div><div class="filters" id="filters" aria-label="Filtrer etter kategori"></div><div class="product-grid" id="productGrid"></div><div class="empty" id="empty" hidden>Ingen ønsker i denne kategorien ennå.</div></section><section class="note"><span>✳</span><div><h3>En liten ting å huske på</h3><p>Du trenger ikke kjøpe akkurat fra butikken jeg har lenket til – den er bare et forslag. Det er tanken som teller ♡</p></div></section></main><footer class="wrap"><span>✳ ønskelisten.</span><span>Laget med litt ekstra omtanke · 2026</span></footer><dialog id="reserveDialog"><form method="dialog" class="dialog-content"><button class="close" aria-label="Lukk" value="cancel">×</button><div class="eyebrow">EN FIN OVERRASKELSE</div><h2>Reserver gave</h2><p id="dialogProduct"></p><label for="reserverName">Ditt navn (valgfritt)</label><input id="reserverName" maxlength="60" placeholder="F.eks. Tante Anne" autocomplete="name"><p class="hint">Navnet lagres sammen med reservasjonen, men vises ikke på ønskelisten.</p><div class="dialog-actions"><button value="cancel" class="secondary">Avbryt</button><button id="confirmReserve" type="button" class="primary">Bekreft reservasjon</button></div><p class="error" id="reserveError" role="alert"></p></form></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="password.js" defer></script><script type="module" src="app.js"></script></body></html>
+<!doctype html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b0e16">
+    <meta name="description" content="Min ønskeliste – finn en gave jeg vil elske.">
+    <title>Min ønskeliste ✦</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="password.css">
+    <script>document.documentElement.classList.add("password-locked");</script>
+</head>
+
+<body>
+    <section id="passwordGate" class="password-gate" aria-label="Lås opp ønskelisten">
+        <form id="passwordForm" class="password-card">
+            <div class="password-symbol">✳</div>
+            <div class="password-eyebrow">KUN FOR FAMILIE OG VENNER</div>
+            <h1>En liten liste med <em>store ønsker.</em></h1>
+            <p>Hei! Denne ønskelisten har en liten kode. Skriv inn passordet du har fått for å se gavene ♡</p><label
+                for="wishlistPassword">Passord</label>
+            <div class="password-field"><input id="wishlistPassword" type="password" placeholder="Skriv inn passord"
+                    autocomplete="off" required><button type="button" id="togglePassword"
+                    aria-label="Vis passord">Vis</button></div>
+            <div id="passwordError" class="password-error" role="alert" aria-live="polite"></div><button type="submit"
+                class="password-submit">Åpne ønskelisten ↗</button><small>✦ God jul 2026 ✦</small>
+        </form>
+    </section>
+    <div class="ambient"></div>
+    <header class="topbar wrap"><a class="logo" href="#top"><span class="logo-mark">✳</span> ønskelisten<span
+                class="dot">.</span></a>
+        <div class="top-actions"><span class="tag"><span class="live"></span> JUL 2026</span><button class="icon-button"
+                id="shareBtn" aria-label="Del ønskelisten" title="Kopier lenke">↗</button></div>
+    </header>
+    <main id="top" class="wrap">
+        <section class="hero">
+            <div class="hero-text">
+                <div class="eyebrow">✦ EN LITEN SAMLING AV STORE ØNSKER</div>
+                <h1>Ting jeg <em>ønsker</em> meg<span class="dot">.</span></h1>
+                <p>En liten guide til ting som hadde gjort meg ekstra glad. Finn noe du liker, sjekk butikklenken og
+                    reserver gjerne gaven for å unngå dobbeltkjøp.</p>
+                <div class="hero-buttons"><a class="primary" href="#gaver">Utforsk ønskene <span>↗</span></a><button
+                        class="secondary" id="shareHero">Del listen ⤴</button></div>
+            </div>
+            <div class="hero-art">
+                <div class="orb"></div>
+                <div class="gift-icon">✳</div><span class="art-label">WISH LIST / 2026</span>
+            </div>
+        </section>
+        <section id="gaver" class="catalog">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">THE COLLECTION</div>
+                    <h2>Mine ønsker <span id="totalCount"></span></h2>
+                </div>
+                <div class="sort-wrap"><label for="sort">Sorter etter</label><select id="sort">
+                        <option value="priority">Mest ønsket</option>
+                        <option value="priceAsc">Pris: lav til høy</option>
+                        <option value="priceDesc">Pris: høy til lav</option>
+                        <option value="name">Navn A–Å</option>
+                    </select></div>
+            </div>
+            <div class="filters" id="filters" aria-label="Filtrer etter kategori"></div>
+            <div class="product-grid" id="productGrid"></div>
+            <div class="empty" id="empty" hidden>Ingen ønsker i denne kategorien ennå.</div>
+        </section>
+        <section class="note"><span>✳</span>
+            <div>
+                <h3>En liten ting å huske på</h3>
+                <p>Du trenger ikke kjøpe akkurat fra butikken jeg har lenket til – den er bare et forslag. Det er tanken
+                    som teller ♡</p>
+            </div>
+        </section>
+    </main>
+    <footer class="wrap"><span>✳ ønskelisten.</span><span>Laget med litt ekstra omtanke · 2026</span></footer>
+    <dialog id="reserveDialog">
+        <form method="dialog" class="dialog-content"><button class="close" aria-label="Lukk" value="cancel">×</button>
+            <div class="eyebrow">EN FIN OVERRASKELSE</div>
+            <h2>Reserver gave</h2>
+            <p id="dialogProduct"></p><label for="reserverName">Ditt navn (valgfritt)</label><input id="reserverName"
+                maxlength="60" placeholder="F.eks. Tante Anne" autocomplete="name">
+            <p class="hint">Navnet lagres sammen med reservasjonen, men vises ikke på ønskelisten.</p>
+            <div class="dialog-actions"><button value="cancel" class="secondary">Avbryt</button><button
+                    id="confirmReserve" type="button" class="primary">Bekreft reservasjon</button></div>
+            <p class="error" id="reserveError" role="alert"></p>
+        </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="password.js" defer></script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
