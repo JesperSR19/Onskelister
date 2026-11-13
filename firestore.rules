@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /wishlists/{wishlistId}/reservations/{productId} {
+      // Alle innloggede (anonyme) besøkende kan se om et ønske er reservert.
+      allow read: if request.auth != null;
+      // Én reservasjon per gave; eksisterende reservasjoner kan ikke overskrives.
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['reserved','reservedBy','createdAt','ownerUid'])
+        && request.resource.data.keys().hasAll(['reserved','reservedBy','createdAt','ownerUid'])
+        && request.resource.data.reserved == true
+        && request.resource.data.reservedBy is string
+        && request.resource.data.reservedBy.size() <= 60
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+  }
+}
