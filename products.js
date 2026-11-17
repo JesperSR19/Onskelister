@@ -177,5 +177,92 @@ export const products = [
     image: './images/lego-pokemon-munchlax.jpg',
     url: 'https://www.komplett.no/product/1336590/hjem-fritid/sport-fritid/leker-hobby/lego/lego-pokmon-munchlax-72150'
 },
-
+{
+    id: 'peak-winterberry-deskmat',
+    name: 'PEAK – Winterberry Hot Springs Desk Mat',
+    category: 'Gaming',
+    price: 600,
+    priority: 1,
+    maxReservations: 1,
+    description: 'Offisiell PEAK-musematte fra Fangamer. 89 × 41 cm. Er flere musematter på listen, ønsker bare en av de utvalgte. VIKTIG! Pris er usikker grunnet kurs, frakt og toll. Gjetter 600kr',
+    image: './images/peak-deskmat.webp',
+    url: 'https://www.fangamer.eu/collections/peak/products/peak-game-desk-mat'
+},
+{
+    id: 'terraria-lunatic-cultist',
+    name: 'Terraria Lunatic Cultist XXL Musematte',
+    category: 'Gaming',
+    price: 279,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Hystar XXL-musematte med Lunatic Cultist-motiv fra Terraria. Er flere musematter på listen, ønsker bare en av de utvalgte.',
+    image: './images/terraria-lunatic-cultist.png',
+    url: 'https://www.maxgaming.no/no/musematter/hystar-terraria-lunatic-cultist-xxl-musematte'
+},
+{
+    id: 'terraria-eye-of-cthulhu',
+    name: 'Terraria Eye of Cthulhu XXL Musematte',
+    category: 'Gaming',
+    price: 279,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Hystar XXL-musematte med Eye of Cthulhu-motiv fra Terraria. Er flere musematter på listen, ønsker bare en av de utvalgte.',
+    image: './images/terraria-eye-of-cthulhu.png',
+    url: 'https://www.maxgaming.no/no/musematter/hystar-terraria-eye-of-cthulhu-xxl-musematte'
+},
+{
+    id: 'mission-sg-75w',
+    name: 'Mission SG 75W Støv- og Luftblåser – Sort',
+    category: 'Tilbehør',
+    price: 399,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Elektrisk luftblåser til rengjøring av PC, tastatur og annet utstyr.',
+    image: './images/mission-sg-75w.webp',
+    url: 'https://www.komplett.no/product/1318215/datautstyr/kontorutstyr-rekvisita/kontorutstyr/luftvaskrens/mission-sg-75w-stoev-og-luftblaaser-sort'
+},
+{
+    id: 'switch2-it-takes-two',
+    name: 'It Takes Two – Nintendo Switch 2',
+    category: 'Nintendo Switch 2',
+    price: 349,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Samarbeidsspill for to spillere. Ønsker Nintendo Switch 2-utgaven.',
+    image: './images/switch2-it-takes-two.avif',
+    url: 'https://www.elkjop.no/product/gaming/spill/it-takes-two-switch-2/1150362'
+},
+{
+    id: 'switch2-split-fiction',
+    name: 'Split Fiction – Nintendo Switch 2',
+    category: 'Nintendo Switch 2',
+    price: 429,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Eventyrspill laget for samarbeid mellom to spillere.',
+    image: './images/switch2-split-fiction.avif',
+    url: 'https://www.elkjop.no/product/gaming/spill/split-fiction-switch-2/922804'
+},
+{
+    id: 'switch2-donkey-kong-bananza',
+    name: 'Donkey Kong Bananza – Nintendo Switch 2',
+    category: 'Nintendo Switch 2',
+    price: 799,
+    priority: 1,
+    maxReservations: 1,
+    description: 'Donkey Kong-eventyr til Nintendo Switch 2.',
+    image: './images/switch2-donkey-kong-bananza.avif',
+    url: 'https://www.elkjop.no/product/gaming/spill/donkey-kong-bananza-nintendo-switch-2/914167'
+},
+{
+    id: 'switch2-zelda-ocarina',
+    name: 'The Legend of Zelda: Ocarina of Time – Switch 2',
+    category: 'Nintendo Switch 2',
+    price: 799,
+    priority: 2,
+    maxReservations: 1,
+    description: 'The Legend of Zelda: Ocarina of Time, utgaven fra produktlenken hos Elkjøp.',
+    image: './images/switch2-zelda-ocarina.avif',
+    url: 'https://www.elkjop.no/product/gaming/spill/the-legend-of-zelda-ocarina-of-time-switch-2/1115379'
+},
 ];
