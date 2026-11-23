@@ -9,7 +9,84 @@ const toast = message => { const el = $('toast'); el.textContent = message; el.c
 const favorites = () => { try { return JSON.parse(localStorage.getItem('wishlist-favorites') || '[]') } catch { return [] } };
 const setFavorites = a => localStorage.setItem('wishlist-favorites', JSON.stringify(a));
 function filters() { const categories = ['Alle', ...new Set(products.map(p => p.category))]; $('filters').innerHTML = categories.map(c => `<button class="filter ${state.category === c ? 'active' : ''}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`).join('') + `<button class="filter ${state.favoritesOnly ? 'active' : ''}" data-fav="1">♡ Favoritter</button>`; }
-function render() { filters(); let list = products.filter(p => (state.category === 'Alle' || p.category === state.category) && (!state.favoritesOnly || favorites().includes(p.id))); list.sort((a, b) => state.sort === 'priceAsc' ? a.price - b.price : state.sort === 'priceDesc' ? b.price - a.price : state.sort === 'name' ? a.name.localeCompare(b.name, 'no') : a.priority - b.priority); $('totalCount').textContent = `(${products.length})`; $('empty').hidden = list.length > 0; $('productGrid').innerHTML = list.map(p => { const fav = favorites().includes(p.id), reserved = Boolean(state.reservations[p.id]); return `<article class="product"><div class="product-image"><img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.style.opacity='.15'"><span class="pill ${p.priority === 1 ? 'fav' : ''}">${p.priority === 1 ? '✦ Mest ønsket' : reserved ? '✓ Reservert' : '✧ Ønske'}</span><button class="heart" data-heart="${escapeHtml(p.id)}" aria-label="${fav ? 'Fjern fra' : 'Legg til'} favoritter" aria-pressed="${fav}">${fav ? '♥' : '♡'}</button></div><div class="product-body"><div class="category">${escapeHtml(p.category)}</div><h3>${escapeHtml(p.name)}</h3><p class="description">${escapeHtml(p.description)}</p><div class="price">${money(p.price)}</div><div class="actions"><a class="shop" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer">Se i butikk ↗</a><button class="reserve" data-reserve="${escapeHtml(p.id)}" ${reserved ? 'disabled' : ''}>${reserved ? '✓ Reservert' : 'Reserver gave'}</button></div></div></article>` }).join(''); }
+function render() {
+    filters();
+
+    let list = products.filter(p =>
+        (state.category === 'Alle' || p.category === state.category) &&
+        (!state.favoritesOnly || favorites().includes(p.id))
+    );
+
+    list.sort((a, b) =>
+        state.sort === 'priceAsc' ? a.price - b.price :
+        state.sort === 'priceDesc' ? b.price - a.price :
+        state.sort === 'name' ? a.name.localeCompare(b.name, 'no') :
+        a.priority - b.priority
+    );
+
+    $('totalCount').textContent = `(${products.length})`;
+    $('empty').hidden = list.length > 0;
+
+    $('productGrid').innerHTML = list.map(p => {
+        const fav = favorites().includes(p.id);
+        const reserved = Boolean(state.reservations[p.id]);
+        const purchased = p.purchased === true;
+
+        return `
+            <article class="product">
+                <div class="product-image ${purchased ? 'purchased' : ''}">
+                    <img
+                        src="${escapeHtml(p.image)}"
+                        alt="${escapeHtml(p.name)}"
+                        loading="lazy"
+                        onerror="this.style.opacity='.15'"
+                    >
+
+                    ${purchased ? '<div class="purchased-banner">✓ KJØPT</div>' : ''}
+
+                    <span class="pill ${p.priority === 1 ? 'fav' : ''}">
+                        ${purchased ? '✓ Kjøpt' : p.priority === 1 ? '✦ Mest ønsket' : reserved ? '✓ Reservert' : '✧ Ønske'}
+                    </span>
+
+                    <button
+                        class="heart"
+                        data-heart="${escapeHtml(p.id)}"
+                        aria-label="${fav ? 'Fjern fra' : 'Legg til'} favoritter"
+                        aria-pressed="${fav}"
+                    >
+                        ${fav ? '♥' : '♡'}
+                    </button>
+                </div>
+
+                <div class="product-body">
+                    <div class="category">${escapeHtml(p.category)}</div>
+                    <h3>${escapeHtml(p.name)}</h3>
+                    <p class="description">${escapeHtml(p.description)}</p>
+                    <div class="price">${money(p.price)}</div>
+
+                    <div class="actions">
+                        <a
+                            class="shop"
+                            href="${escapeHtml(p.url)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Se i butikk ↗
+                        </a>
+
+                        <button
+                            class="reserve"
+                            data-reserve="${escapeHtml(p.id)}"
+                            ${reserved || purchased ? 'disabled' : ''}
+                        >
+                            ${purchased ? '✓ Allerede kjøpt' : reserved ? '✓ Reservert' : 'Reserver gave'}
+                        </button>
+                    </div>
+                </div>
+            </article>
+        `;
+    }).join('');
+}
 $('filters').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.dataset.cat !== undefined) state.category = b.dataset.cat; else if (b.dataset.fav) state.favoritesOnly = !state.favoritesOnly; render() });
 $('sort').addEventListener('change', e => { state.sort = e.target.value; render() });
 let selected = null;

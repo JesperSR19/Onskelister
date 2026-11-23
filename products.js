@@ -162,6 +162,7 @@ export const products = [
     price: 1049,
     priority: 2,
     maxReservations: 1,
+    purchased: true,
     description: 'LEGO Pokémon byggesett med Arcanine.',
     image: './images/lego-pokemon-arcanine.avif',
     url: 'https://www.komplett.no/product/1336662/hjem-fritid/sport-fritid/leker-hobby/lego/lego-pokmon-arcanine-72160'
@@ -176,6 +177,18 @@ export const products = [
     description: 'LEGO Pokémon byggesett med Munchlax.',
     image: './images/lego-pokemon-munchlax.jpg',
     url: 'https://www.komplett.no/product/1336590/hjem-fritid/sport-fritid/leker-hobby/lego/lego-pokmon-munchlax-72150'
+},
+
+{
+    id: 'lego-pokemon-rayquaza',
+    name: 'LEGO Pokémon Rayquaza – 72168',
+    category: 'LEGO',
+    price: 1349,
+    priority: 2,
+    maxReservations: 1,
+    description: 'LEGO Pokémon byggesett med Rayquaza.',
+    image: './images/lego-pokemon-rayquaza.jpg',
+    url: 'https://www.komplett.no/product/1336534/hjem-fritid/sport-fritid/leker-hobby/lego/lego-pokmon-rayquaza-72168'
 },
 {
     id: 'peak-winterberry-deskmat',

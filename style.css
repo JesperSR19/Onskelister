@@ -657,4 +657,41 @@ dialog::backdrop {
         width: 100%;
         justify-content: space-between
     }
+
+    }
+
+    /* Kjøpt-banner over produktbilder */
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image.purchased img {
+    filter: brightness(0.65);
+}
+
+.purchased-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 160%;
+    padding: 16px 0;
+
+    transform: translate(-50%, -50%) rotate(-32deg);
+    transform-origin: center;
+
+    background: rgba(22, 134, 93, 0.96);
+    border-top: 2px solid rgba(163, 243, 201, 0.6);
+    border-bottom: 2px solid rgba(163, 243, 201, 0.6);
+
+    color: #ffffff;
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-align: center;
+    white-space: nowrap;
+
+    pointer-events: none;
+    z-index: 2;
 }
