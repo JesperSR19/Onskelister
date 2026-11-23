@@ -278,4 +278,92 @@ export const products = [
     image: './images/switch2-zelda-ocarina.avif',
     url: 'https://www.elkjop.no/product/gaming/spill/the-legend-of-zelda-ocarina-of-time-switch-2/1115379'
 },
+{
+    id: 'pokemon-center-tohoku',
+    name: 'Pokémon Center Pikachu Special Box – Tohoku',
+    category: 'Pokémon TCG',
+    price: 1649,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Japansk Pokémon Center-spesialboks med eksklusivt Pikachu-promokort. Ønskes uåpnet og forseglet.',
+    image: 'images/pokemon-center-tohoku.webp',
+    url: 'https://tcgjakt.no/p/pokemon-center-tohoku-special-box-japansk'
+},
+{
+    id: 'pokemon-center-fukuoka',
+    name: 'Pokémon Center Pikachu Special Box – Fukuoka',
+    category: 'Pokémon TCG',
+    price: 1790,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Japansk Pokémon Center-spesialboks med eksklusivt Pikachu-promokort. Ønskes uåpnet og forseglet.',
+    image: 'images/pokemon-center-fukuoka.webp',
+    url: 'https://tcgjakt.no/p/pokemon-center-fukuoka-special-box-japansk'
+},
+{
+    id: 'pokemon-center-hiroshima',
+    name: 'Pokémon Center Pikachu Special Box – Hiroshima',
+    category: 'Pokémon TCG',
+    price: 1949,
+    priority: 2,
+    maxReservations: 1,
+    description: 'Japansk Pokémon Center-spesialboks med eksklusivt Pikachu-promokort. Ønskes uåpnet og forseglet.',
+    image: 'images/pokemon-center-hiroshima.webp',
+    url: 'https://tcgjakt.no/p/pokemon-center-hiroshima-special-box-japansk'
+},
+{
+    id: 'pokemon-delta-reign-bundle',
+    name: 'Pokémon TCG – Delta Reign Booster Bundle',
+    category: 'Pokémon TCG',
+    price: 0,
+    priority: 2,
+    maxReservations: null,
+    description: 'Engelsk Booster Bundle med 6 boosterpakker. Flere eksemplarer ønskes.',
+    image: 'images/pokemon-delta-reign-bundle.webp',
+    url: 'https://tcgjakt.no/p/delta-reign-bundle-engelsk'
+},
+{
+    id: 'pokemon-delta-reign-etb',
+    name: 'Pokémon TCG – Delta Reign Elite Trainer Box',
+    category: 'Pokémon TCG',
+    price: 0,
+    priority: 2,
+    maxReservations: null,
+    description: 'Engelsk Elite Trainer Box med 9 boosterpakker og tilbehør. Flere eksemplarer ønskes.',
+    image: 'images/pokemon-delta-reign-etb.webp',
+    url: 'https://tcgjakt.no/p/delta-reign-etb-engelsk'
+},
+{
+    id: 'pokemon-30th-celebration-premium',
+    name: 'Pokémon TCG – 30th Celebration Premium Collection',
+    category: 'Pokémon TCG',
+    price: 0,
+    priority: 2,
+    maxReservations: null,
+    description: 'Engelsk Premium Collection. Ønskes uåpnet og forseglet til samlingen.',
+    image: 'images/pokemon-30th-celebration-premium.webp',
+    url: 'https://tcgjakt.no/p/30th-celebration-premium-engelsk'
+},
+{
+    id: 'pokemon-storm-emeralda-box',
+    name: 'Pokémon TCG – Storm Emeralda Booster Box',
+    category: 'Pokémon TCG',
+    price: 0,
+    priority: 2,
+    maxReservations: null,
+    description: 'Japansk Booster Box. Ønskes uåpnet og forseglet til samlingen. Flere eksemplarer ønskes.',
+    image: 'images/pokemon-storm-emeralda-box.webp',
+    url: 'https://tcgjakt.no/p/storm-emeralda-box-japansk'
+},
+{
+    id: 'pokemon-pitch-black-bundle',
+    name: 'Pokémon TCG – Pitch Black Booster Bundle',
+    category: 'Pokémon TCG',
+    price: 0,
+    priority: 2,
+    maxReservations: null,
+    description: 'Engelsk Booster Bundle med 6 boosterpakker. Flere eksemplarer ønskes.',
+    image: 'images/pokemon-pitch-black-bundle.webp',
+    url: 'https://tcgjakt.no/p/pitch-black-bundle-engelsk'
+},
 ];

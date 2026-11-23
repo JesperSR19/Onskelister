@@ -695,3 +695,31 @@ dialog::backdrop {
     pointer-events: none;
     z-index: 2;
 }
+
+/* Informasjonsboks for Pokémon TCG */
+.tcg-info {
+    background: #14283e;
+    border: 1px solid #2b5275;
+    border-left: 4px solid #4da6ff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 0 0 24px;
+    color: #e8f2ff;
+    line-height: 1.6;
+}
+
+.tcg-info strong {
+    display: block;
+    color: #79bdff;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.tcg-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.tcg-info[hidden] {
+    display: none;
+}
